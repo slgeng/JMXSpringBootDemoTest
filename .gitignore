@@ -1,0 +1,24 @@
+# Python编译文件
+*.pyc
+*.pyo
+
+# 压缩文件
+*.zip
+
+# 不想同步的
+*.local
+*.temp
+*.vt
+*.log
+*.bak
+
+# 编译临时文件夹
+build/
+
+# 目录
+.idea
+.vscode
+.python-version
+venv/
+
+
