@@ -1,21 +1,19 @@
+# coding=utf-8
 import unittest
+import HtmlTestRunner
+import os
+import time
 
+# 用例路径
+case_path = os.path.join(os.getcwd(), "cases")
 
-class TestMatch(unittest.TestCase):
-    def setUp(self):
-        print "set up ...."
-
-    def tearDown(self):
-        print "tear down ..."
-
-    def test_1(self):
-        print "test_1"
-        self.assertEqual(1, 1, "not success")
-
-    def test_2(self):
-        print "test_2"
-        self.assertIs(1, 1, "failed")
+def all_case():
+    discover = unittest.defaultTestLoader.discover(case_path, pattern="*.py", top_level_dir=None)
+    return discover
 
 
 if __name__ == '__main__':
-    unittest.main()
+    suite = unittest.TestSuite()
+    suite.addTest(all_case())
+    runner = HtmlTestRunner.HTMLTestRunner(output='', report_title="OKOK", resultclass="xxx")
+    runner.run(suite)

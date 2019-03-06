@@ -20,5 +20,6 @@ build/
 .vscode
 .python-version
 venv/
+reports/
 
 
