@@ -15,5 +15,5 @@ def all_case():
 if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(all_case())
-    runner = HtmlTestRunner.HTMLTestRunner(output='', report_title="OKOK", resultclass="xxx")
+    runner = HtmlTestRunner.HTMLTestRunner(output='')
     runner.run(suite)
