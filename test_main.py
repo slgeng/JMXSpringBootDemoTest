@@ -1,6 +1,7 @@
 # coding=utf-8
 import unittest
 import HtmlTestRunner
+import xmlrunner
 import os
 
 # 用例路径
@@ -15,5 +16,7 @@ def all_case():
 if __name__ == '__main__':
     suite = unittest.TestSuite()
     suite.addTest(all_case())
-    runner = HtmlTestRunner.HTMLTestRunner(output='')
-    runner.run(suite)
+    with open('./results.xml', 'wb') as output:
+        runner = xmlrunner.XMLTestRunner(output=output)
+        # runner = HtmlTestRunner.HTMLTestRunner(output='')
+        runner.run(suite)
