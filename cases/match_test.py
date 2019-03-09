@@ -16,4 +16,4 @@ class TestMatch(unittest.TestCase):
 
     def test_2(self):
         # print "test_2"
-        self.assertIs(1, 1, "failed")
+        self.assertIs(1, 2, "failed")
